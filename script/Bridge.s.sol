@@ -24,13 +24,13 @@ contract BridgeScript is Script {
 		Bridge bridge = new Bridge();
 		BridgeToken token = new BridgeToken();
 
+		console2.log("Bridge address: %s", address(bridge));
+		console2.log("Token address: %s", address(token));
+
 		token.setMaxSupply(100000);
 		token.ownerMint(vm.envAddress("ADDRESS"), 1000);
 		
-		//bridge.addToken(token.);
-
 		
-		// console2.log("Bridge address: %s", address(bridge));
 		token.setAdmin(address(bridge));
 		bridge.addToken(address(token));
 		bridge.bridgeSent(address(token), 10, vm.envAddress("ADDRESS"));
