@@ -13,7 +13,12 @@ Foundry consists of:
 
 https://book.getfoundry.sh/
 
-## Usage
+## How to run this project 
+
+- TESTNET_RPC_URL=https://erpc.apothem.network
+
+- forge script --broadcast script/Bridge.s.sol:BridgeScript --rpc-url $TESTNET_RPC_URL
+
 
 ### Build
 
